@@ -1,0 +1,124 @@
+*{
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+body{
+    padding: 15px;
+}
+
+.header{
+    font-size: x-large;
+    font-weight: 900;
+    text-align: center;
+    padding: 25px;
+    border-bottom: 3px dotted black;
+    margin-bottom: 5px;
+}
+
+.content{
+    padding: 25px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+
+}
+.card{
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr 1fr ;
+    width: 230px;
+    height: 280px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.title{
+    font-size: larger;
+    font-weight: 700;
+}
+
+
+.title, .description, .due-date, .buttons{
+    border: 1px dotted black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+}
+
+.buttons{
+    justify-content: space-between;
+}
+
+#new-task{
+    width: 35px;
+    height: 35px;
+    border-radius: 25px;
+    background-color: #4333FA;
+    color: white;
+    font-size: x-large;
+    font-weight: 900;
+}
+
+
+/*Styling for pop-up form*/
+
+#popup{
+    visibility: hidden;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */ 
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    height: fit-content;
+
+}
+
+#form{
+    display: flex;
+    color: antiquewhite;
+    flex-direction: column;
+    gap: 5px;
+    background-color: #4333FA;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 10px 10px;
+}
+
+#cardHeader{
+    display: flex;
+
+    & button{
+        height: min-content;
+        margin-left: auto;
+        align-self: center;
+    }
+}
+
+textarea#description {
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 120px; /* Set a minimum height */
+    white-space: pre-wrap; /* Allow text to wrap to the next line */
+    overflow: auto; /* Enable vertical scrolling if necessary */
+}
+
+
+div#edit-form {
+    visibility: hidden; /* Initially visible */
+    position: fixed; /* Position as desired */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the form */
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    z-index: 2; /* Sit on top */
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: white; /* Optional: Set the background color */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
